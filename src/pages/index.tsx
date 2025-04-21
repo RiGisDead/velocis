@@ -4,18 +4,31 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0b0c10] to-[#1f2833] text-white font-sans">
       <Head>
-        <title>Velocis | Web Development Company</title>
-        <meta name="description" content="Speed-focused web development for businesses. One-time builds or monthly plans." />
-        <meta name="keywords" content="Glen Ellyn Web Design, Website Developer, Fast Websites, Velocis Web" />
+        <title>Velocis | Fast, Modern Website Development</title>
+        <meta name="description" content="Custom websites for small businesses, freelancers, and creators. One-time builds or monthly plans. Based in Glen Ellyn, serving clients everywhere." />
+        <meta name="keywords" content="web design, web development, Glen Ellyn, freelance developer, small business website, Velocis, ecommerce websites, site redesign, modern websites, fast websites" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Velocis | Fast, Modern Website Development" />
+        <meta property="og:description" content="Need a website? We build fast, professional sites for businesses and creators. One-time or monthly plans available." />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content="https://velocis.vercel.app" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Velocis | Fast, Modern Website Development" />
+        <meta name="twitter:description" content="Custom websites for small businesses, creators, and more. Fast, sleek, and scalable." />
+        <meta name="twitter:image" content="/logo.png" />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       {/* Hero Section */}
       <section className="text-center py-20 px-4">
-        <h1 className="text-5xl font-bold mb-4">Velocis</h1>
+        <h1 className="text-5xl font-bold mb-4">VELOCIS</h1>
         <p className="text-xl mb-6">Speed. Precision. Modern Web Development.</p>
       </section>
 

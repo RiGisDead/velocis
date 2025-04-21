@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://velocis.vercel.app/sitemap.xml
