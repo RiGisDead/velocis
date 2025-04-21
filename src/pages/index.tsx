@@ -17,32 +17,41 @@ export default function Home() {
       <section className="text-center py-20 px-4">
         <h1 className="text-5xl font-bold mb-4">Velocis</h1>
         <p className="text-xl mb-6">Speed. Precision. Modern Web Development.</p>
-        <button className="bg-white text-black px-6 py-2 font-semibold rounded hover:bg-gray-200 transition">
-          Get Started
-        </button>
       </section>
 
       {/* Services Section */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-10 text-center">Our Services</h2>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2">One-Time Website</h3>
-            <p className="text-gray-300 mb-4">Custom-built sites delivered fast. Perfect for businesses who want full ownership.</p>
-            <span className="text-white font-bold">Starts at $700</span>
-          </div>
-          <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2">Monthly Plans</h3>
-            <p className="text-gray-300 mb-4">Ongoing updates, hosting, and support with no upfront cost.</p>
-            <span className="text-white font-bold">From $100/mo</span>
-          </div>
-          <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-2">Custom Solutions</h3>
-            <p className="text-gray-300 mb-4">Need something more complex? Let’s build something powerful together.</p>
-            <span className="text-white font-bold">Let’s talk</span>
-          </div>
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
+          <h3 className="text-xl font-semibold mb-2">Business Website Builds</h3>
+          <p className="text-gray-300 mb-4">Fast, responsive websites tailored to your business with full ownership.</p>
+          <span className="text-white font-bold">From $300</span>
         </div>
-      </section>
+        <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
+          <h3 className="text-xl font-semibold mb-2">Monthly Website Plans</h3>
+          <p className="text-gray-300 mb-4">Get a pro website with no large upfront cost. Hosting, updates, and support included.</p>
+          <span className="text-white font-bold">From $100/mo</span>
+        </div>
+        <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
+          <h3 className="text-xl font-semibold mb-2">Portfolio & Personal Sites</h3>
+          <p className="text-gray-300 mb-4">Whether you're a creator, freelancer, or professional — we’ll make your personal brand stand out.</p>
+          <span className="text-white font-bold">From $150</span>
+        </div>
+        <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
+          <h3 className="text-xl font-semibold mb-2">E-Commerce Ready</h3>
+          <p className="text-gray-300 mb-4">Launch your online store fast. Secure checkout, product listings, and more.</p>
+          <span className="text-white font-bold">Starting at $1000</span>
+        </div>
+        <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
+          <h3 className="text-xl font-semibold mb-2">Redesign & Modernization</h3>
+          <p className="text-gray-300 mb-4">Have a slow or outdated website? We’ll rebuild it for speed, mobile, and SEO.</p>
+          <span className="text-white font-bold">Dependant on site requirements/size</span>
+        </div>
+        <div className="bg-[#1b1f23] rounded-xl p-6 shadow-md">
+          <h3 className="text-xl font-semibold mb-2">Custom Integrations</h3>
+          <p className="text-gray-300 mb-4">Need something specific? We handle custom backends, booking systems, dashboards and more.</p>
+          <span className="text-white font-bold">Tailored Quote</span>
+        </div>
+      </div>
 
       {/* Contact Form */}
       <section className="bg-[#0b0c10] py-16 px-6 text-center">
