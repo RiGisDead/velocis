@@ -26,15 +26,14 @@ export default function Home() {
         <meta name="twitter:title" content="Velocis | Fast, Modern Website Development" />
         <meta name="twitter:description" content="Custom websites for small businesses, creators, and more. Fast, sleek, and scalable." />
         <meta name="twitter:image" content="/logo.png" />
-
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Hero Section */}
-      <section className="bg-[#13161a] text-center py-16 px-4 border-y border-gray-700">
-        <h1 className="text-5xl font-bold mb-4">VELOCIS</h1>
+      <section className="bg-[#13161a] text-center py-16 px-4 border-gray-700">
+        <h1 className="text-7xl font-bold mb-4">VELOCIS</h1>
         <h2 className="text-2xl font-semibold mb-2">Need a website that actually converts?</h2>
-        <p className="text-lg mb-4 text-gray-300 max-w-xl mx-auto">
+        <p className="text-lg mb-4 text-white-300 max-w-xl mx-auto">
           We build clean, high-performance websites for small businesses — delivered in 7 days or less.
         </p>
         <p className="text-md text-white font-medium">Get a free homepage preview — no strings attached.</p>
