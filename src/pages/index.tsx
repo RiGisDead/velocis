@@ -1,6 +1,10 @@
 import Head from "next/head";
+import { useState } from "react";
 
 export default function Home() {
+  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle");
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0b0c10] to-[#1f2833] text-white font-sans">
       <Head>
@@ -73,7 +77,9 @@ export default function Home() {
           className="max-w-xl mx-auto space-y-4"
           onSubmit={async (e) => {
             e.preventDefault();
-          
+            setFormStatus("idle");
+            setIsLoading(true);
+
             const form = e.currentTarget;
             const nameInput = form.elements.namedItem("name") as HTMLInputElement;
             const emailInput = form.elements.namedItem("email") as HTMLInputElement;
@@ -87,39 +93,45 @@ export default function Home() {
               company: honeypotInput.value.trim()
             };
 
-            
             if (formData.company !== "") {
               console.warn("Bot submission detected.");
-              return; // silently stop the submit
+              setIsLoading(false);
+              return;
             }
-            
-          
-            // Simple client-side validation
-            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!formData.name || !formData.email || !formData.message) {
-              alert("Please fill out all fields.");
+              setFormStatus("error");
+              setIsLoading(false);
               return;
             }
             if (!emailRegex.test(formData.email)) {
-              alert("Please enter a valid email address.");
+              setFormStatus("error");
+              setIsLoading(false);
               return;
             }
-          
+
             try {
               const res = await fetch("https://velocis-api.onrender.com/submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
               });
-          
+
               const result = await res.json();
-              alert(result.message);
-              form.reset();
+              if (result.status === "success") {
+                setFormStatus("success");
+                form.reset();
+              } else {
+                setFormStatus("error");
+              }
             } catch (err) {
-              alert("There was an error submitting the form. Please try again later.");
               console.error(err);
+              setFormStatus("error");
+            } finally {
+              setIsLoading(false);
             }
-          }}          
+          }}
         >
           <input
             type="text"
@@ -144,14 +156,29 @@ export default function Home() {
           ></textarea>
           <input
             type="text"
-            name="company"  // or any non-obvious name
+            name="company"
             style={{ display: "none" }}
             tabIndex={-1}
             autoComplete="off"
           />
-          <button type="submit" className="bg-white text-black px-6 py-2 font-semibold rounded hover:bg-gray-200 transition">
-            Send Message
+          <button
+            type="submit"
+            className="bg-white text-black px-6 py-2 font-semibold rounded hover:bg-gray-200 transition flex items-center justify-center gap-2"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-black"></span>
+            ) : (
+              "Send Message"
+            )}
           </button>
+
+          {formStatus === "success" && (
+            <p className="text-green-400 mt-4 text-sm">Thanks! We'll be in touch soon.</p>
+          )}
+          {formStatus === "error" && (
+            <p className="text-red-400 mt-4 text-sm">Something went wrong. Please try again.</p>
+          )}
         </form>
       </section>
 
