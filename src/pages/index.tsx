@@ -161,17 +161,19 @@ export default function Home() {
             tabIndex={-1}
             autoComplete="off"
           />
-          <button
-            type="submit"
-            className="bg-white text-black px-6 py-2 font-semibold rounded hover:bg-gray-200 transition flex items-center justify-center gap-2"
-            disabled={isLoading}
-          >
-            {isLoading ? (
-              <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-black"></span>
-            ) : (
-              "Send Message"
-            )}
-          </button>
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="bg-white text-black px-6 py-2 font-semibold rounded hover:bg-gray-200 transition flex items-center justify-center gap-2"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-black"></span>
+              ) : (
+                "Send Message"
+              )}
+            </button>
+          </div>
 
           {formStatus === "success" && (
             <p className="text-green-400 mt-4 text-sm">Thanks! We'll be in touch soon.</p>
