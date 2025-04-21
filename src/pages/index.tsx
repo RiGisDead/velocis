@@ -53,12 +53,18 @@ export default function Home() {
             e.preventDefault();
           
             const form = e.currentTarget;
+            const nameInput = form.elements.namedItem("name") as HTMLInputElement;
+            const emailInput = form.elements.namedItem("email") as HTMLInputElement;
+            const messageInput = form.elements.namedItem("message") as HTMLTextAreaElement;
+            const honeypotInput = form.elements.namedItem("company") as HTMLInputElement;
+
             const formData = {
-              name: form.name.value.trim(),
-              email: form.email.value.trim(),
-              message: form.message.value.trim(),
-              company: form.company.value.trim() // Honeypot
+              name: nameInput.value.trim(),
+              email: emailInput.value.trim(),
+              message: messageInput.value.trim(),
+              company: honeypotInput.value.trim()
             };
+
             
             if (formData.company !== "") {
               console.warn("Bot submission detected.");
