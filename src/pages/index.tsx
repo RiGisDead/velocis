@@ -34,6 +34,12 @@ export default function Home() {
       <section className="text-center py-20 px-4">
         <h1 className="text-5xl font-bold mb-4">VELOCIS</h1>
         <p className="text-xl mb-6">Speed. Precision. Modern Web Development.</p>
+
+        <h2 className="text-2xl font-semibold mb-2">Need a website that actually converts?</h2>
+        <p className="text-lg mb-4 text-gray-300 max-w-xl mx-auto">
+          We build clean, high-performance websites for small businesses — delivered in 7 days or less.
+        </p>
+        <p className="text-md text-white font-medium">Get a free homepage preview — no strings attached.</p>
       </section>
 
       {/* Services Section */}
