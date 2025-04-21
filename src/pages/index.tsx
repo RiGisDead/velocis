@@ -31,9 +31,9 @@ export default function Home() {
       </Head>
 
       {/* Hero Section */}
-      <section className="text-center py-20 px-4">
+      <section className="bg-[#13161a] text-center py-16 px-4 border-y border-gray-700">
         <h1 className="text-5xl font-bold mb-4">VELOCIS</h1>
-        <p className="text-xl mb-6">Speed. Precision. Modern Web Development.</p>
+        <p className="text-xl mb-8 text-gray-300">Speed. Precision. Modern Web Development.</p>
 
         <h2 className="text-2xl font-semibold mb-2">Need a website that actually converts?</h2>
         <p className="text-lg mb-4 text-gray-300 max-w-xl mx-auto">
